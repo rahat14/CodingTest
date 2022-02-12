@@ -1,6 +1,9 @@
 package com.rahat.gtaf.codingtest.di
 
+import com.haroldadmin.cnradapter.NetworkResponseAdapterFactory
 import com.rahat.gtaf.codingtest.networking.ApiInterface
+import com.rahat.gtaf.codingtest.ui.commitList.CommitListRepository
+import com.rahat.gtaf.codingtest.ui.profile.ProfileRepository
 import com.rahat.gtaf.codingtest.utils.Const
 import dagger.Module
 import dagger.Provides
@@ -40,6 +43,7 @@ object AppModules {
     fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder().baseUrl(Const.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
+            .addCallAdapterFactory(NetworkResponseAdapterFactory())
             .client(okHttpClient)
             .build()
 
@@ -47,16 +51,21 @@ object AppModules {
 
     @Singleton
     @Provides
-    fun provideNewsInterface(retrofit: Retrofit): ApiInterface {
+    fun provideApiInterface(retrofit: Retrofit): ApiInterface {
         return retrofit.create(ApiInterface::class.java)
     }
 
 
-//    @Singleton
-//    @Provides
-//    fun provideRepository(newsInterface: ApiInterface): VerseListRepository {
-//        return VerseListRepository(newsInterface)
-//    }
+    @Singleton
+    @Provides
+    fun provideCommitListRepository(newsInterface: ApiInterface): CommitListRepository {
+        return CommitListRepository(newsInterface)
+    }
 
+    @Singleton
+    @Provides
+    fun provideProfileRepository(newsInterface: ApiInterface): ProfileRepository {
+        return ProfileRepository(newsInterface)
+    }
 
 }

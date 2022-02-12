@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setupNavController()
+
     }
 
     private fun setupNavController() {
@@ -29,9 +30,8 @@ class MainActivity : AppCompatActivity() {
         )
         //setting the bottom nav
         binding.bottomNavigationView.setupWithNavController(navControl)
-        // setting the toolbar
-        val appBarConfiguration = AppBarConfiguration(binding.bottomNavigationView.menu)
-        setupActionBarWithNavController(navControl, appBarConfiguration)
+
+
 
     }
 }

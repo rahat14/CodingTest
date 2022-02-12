@@ -6,13 +6,13 @@
     app:startDestination="@id/commitListFragment">
 
     <fragment
-        android:id="@+id/profileFragment"
-        android:name="com.rahat.gtaf.codingtest.ui.fragments.ProfileFragment"
+        android:id="@+id/profile_Fragment"
+        android:name="com.rahat.gtaf.codingtest.ui.profile.ProfileFragment"
         android:label="Profile"
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/commitListFragment"
-        android:name="com.rahat.gtaf.codingtest.ui.fragments.CommitListFragment"
+        android:name="com.rahat.gtaf.codingtest.ui.commitList.CommitListFragment"
         android:label="Commits"
         tools:layout="@layout/fragment_commit_list" />
 

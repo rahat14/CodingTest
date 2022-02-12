@@ -6,9 +6,10 @@
     android:background="#333333"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context=".ui.fragments.ProfileFragment">
+    tools:context=".ui.profile.ProfileFragment">
 
     <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profilePic"
         android:layout_width="170dp"
         android:layout_height="170dp"
         android:layout_marginTop="48dp"
@@ -20,12 +21,14 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/source_sans_pro"
         android:text="Username"
+        android:id="@+id/name"
         android:textColor="@color/white"
         android:textFontWeight="400"
         android:textSize="24sp"
         tools:ignore="UnusedAttribute" />
 
     <TextView
+        android:id="@+id/username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -37,6 +40,7 @@
         tools:ignore="UnusedAttribute" />
 
     <TextView
+        android:id="@+id/bio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -67,13 +71,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:fontFamily="@font/source_sans_pro"
-                android:text="Public Repos:"
+                android:text="Public Repos: "
                 android:textColor="@color/white"
                 android:textFontWeight="400"
                 android:textSize="17sp"
                 tools:ignore="UnusedAttribute" />
 
             <TextView
+                android:id="@+id/publicRepoCountTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
@@ -96,13 +101,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:fontFamily="@font/source_sans_pro"
-                android:text="Public Gists:"
+                android:text="Public Gists: "
                 android:textColor="@color/white"
                 android:textFontWeight="400"
                 android:textSize="17sp"
                 tools:ignore="UnusedAttribute" />
 
             <TextView
+                android:id="@+id/publicGistsCountTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
@@ -126,18 +132,19 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:fontFamily="@font/source_sans_pro"
-                android:text="Private Repos:"
+                android:text="Private Repos: "
                 android:textColor="@color/white"
                 android:textFontWeight="400"
                 android:textSize="17sp"
                 tools:ignore="UnusedAttribute" />
 
             <TextView
+                android:id="@+id/privateRepoCountTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:fontFamily="@font/source_sans_pro"
-                android:text="2"
+                android:text="0"
                 android:textColor="@color/white"
                 android:textFontWeight="400"
                 android:textSize="17sp"

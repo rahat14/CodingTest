@@ -2,8 +2,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/commitListFragment"
-        android:title="commit" />
+        android:icon="@drawable/ic_new_commit"
+        android:title="@string/commits" />
     <item
-        android:id="@+id/profileFragment"
-        android:title="profile" />
+        android:id="@+id/profile_Fragment"
+        android:icon="@drawable/ic_new_user"
+        android:title="@string/user_profile" />
 </menu>
