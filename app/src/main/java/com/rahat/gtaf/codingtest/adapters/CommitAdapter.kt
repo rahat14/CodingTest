@@ -16,7 +16,7 @@ import com.rahat.gtaf.codingtest.utils.TimeConverterClass
 class CommitAdapter(private val interaction: Interaction? = null) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    val DIFF_CALLBACK = object : DiffUtil.ItemCallback<CommitModel>() {
+    private val callback = object : DiffUtil.ItemCallback<CommitModel>() {
 
         override fun areItemsTheSame(oldItem: CommitModel, newItem: CommitModel): Boolean {
             return oldItem.sha == newItem.sha
@@ -27,12 +27,12 @@ class CommitAdapter(private val interaction: Interaction? = null) :
         }
 
     }
-    private val differ = AsyncListDiffer(this, DIFF_CALLBACK)
+    private val differ = AsyncListDiffer(this, callback)
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
 
-        return viewholder(
+        return CommitViewholder(
             LayoutInflater.from(parent.context).inflate(
                 R.layout.item_commit,
                 parent,
@@ -44,8 +44,8 @@ class CommitAdapter(private val interaction: Interaction? = null) :
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when (holder) {
-            is viewholder -> {
-                holder.bind(differ.currentList.get(position))
+            is CommitViewholder -> {
+                holder.bind(differ.currentList[position])
             }
         }
     }
@@ -58,7 +58,7 @@ class CommitAdapter(private val interaction: Interaction? = null) :
         differ.submitList(list)
     }
 
-    class viewholder
+    class CommitViewholder
     constructor(
         itemView: View,
         private val interaction: Interaction?
@@ -71,8 +71,8 @@ class CommitAdapter(private val interaction: Interaction? = null) :
             }
             binding.commitName.text = item.commit?.message.toString()
             binding.commitAuthor.text = item.commit?.author?.name
-            binding.commitDate.text = TimeConverterClass.convertDateToText("${item.commit?.committer?.date}")
-                    .toString()
+            binding.commitDate.text =
+                TimeConverterClass.convertDateToText("${item.commit?.committer?.date}")
             Glide.with(binding.root.context)
                 .load(item.author?.avatar_url.toString())
                 .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)

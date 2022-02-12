@@ -5,7 +5,7 @@ import com.rahat.gtaf.codingtest.models.CommitModel
 import com.rahat.gtaf.codingtest.models.ErrorResponse
 import com.rahat.gtaf.codingtest.networking.ApiInterface
 
-class CommitListRepository(val api: ApiInterface) {
+class CommitListRepository(private val api: ApiInterface) {
 
 
     suspend fun getCommitList(

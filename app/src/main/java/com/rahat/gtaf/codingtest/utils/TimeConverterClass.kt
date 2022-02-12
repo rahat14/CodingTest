@@ -32,8 +32,7 @@ class TimeConverterClass {
 
             val today = getToday()
             val msDiff = today?.timeInMillis?.minus(commitTime?.timeInMillis ?: 0) ?: 0
-            val daysDiff = TimeUnit.MILLISECONDS.toDays(msDiff)
-            return daysDiff
+            return TimeUnit.MILLISECONDS.toDays(msDiff)
         }
 
         private fun getToday(): Calendar? {

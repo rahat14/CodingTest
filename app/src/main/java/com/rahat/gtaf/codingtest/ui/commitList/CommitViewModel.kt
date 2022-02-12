@@ -5,7 +5,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
 import com.rahat.gtaf.codingtest.models.CommitModel
 import com.rahat.gtaf.codingtest.models.ErrorResponse
-import com.rahat.gtaf.codingtest.networking.ApiInterface
 import com.rahat.gtaf.codingtest.utils.Const
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -13,10 +12,10 @@ import javax.inject.Inject
 
 @HiltViewModel
 class CommitViewModel @Inject constructor(
-    repository: CommitListRepository, private val api: ApiInterface
+    repository: CommitListRepository
 ) : ViewModel() {
 
-    val repos = repository
+    private val repos = repository
 
     fun getCommitList(
         ownerName: String,

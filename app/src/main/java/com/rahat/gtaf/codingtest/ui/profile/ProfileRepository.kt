@@ -6,7 +6,7 @@ import com.rahat.gtaf.codingtest.models.UserModel
 import com.rahat.gtaf.codingtest.networking.ApiInterface
 import com.rahat.gtaf.codingtest.utils.Const
 
-class ProfileRepository(val api: ApiInterface) {
+class ProfileRepository(private val api: ApiInterface) {
 
     suspend fun getProfile(user: String = Const.PROFILE_USERNAME): Pair<UserModel?, ErrorResponse?> {
 

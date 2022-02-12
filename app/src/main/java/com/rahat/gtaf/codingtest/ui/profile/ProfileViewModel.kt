@@ -4,7 +4,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.rahat.gtaf.codingtest.models.ErrorResponse
 import com.rahat.gtaf.codingtest.models.UserModel
-import com.rahat.gtaf.codingtest.networking.ApiInterface
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -14,10 +13,10 @@ import javax.inject.Inject
 
 @HiltViewModel
 class ProfileViewModel @Inject constructor(
-    repository: ProfileRepository, private val api: ApiInterface
+    repository: ProfileRepository
 ) : ViewModel() {
 
-    val repos = repository
+    private val repos = repository
     val profileDataResponse: MutableLiveData<Pair<UserModel?, ErrorResponse?>> = MutableLiveData()
 
     init {

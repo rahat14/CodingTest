@@ -3,8 +3,6 @@ package com.rahat.gtaf.codingtest.ui
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.Navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.rahat.gtaf.codingtest.R
 import com.rahat.gtaf.codingtest.databinding.ActivityMainBinding
@@ -30,7 +28,6 @@ class MainActivity : AppCompatActivity() {
         )
         //setting the bottom nav
         binding.bottomNavigationView.setupWithNavController(navControl)
-
 
 
     }
