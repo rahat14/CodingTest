@@ -12,3 +12,8 @@ gradle-app.setting
 
 # # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
 # gradle/wrapper/gradle-wrapper.properties
+.idea
+.idea/gradle.xml
+.idea/gradle.xml
+.idea/libraries/Gradle__androidx_activity_activity_1_2_4_aar.xml
+.idea/libraries/Gradle__androidx_activity_activity_ktx_1_2_3_aar.xml
