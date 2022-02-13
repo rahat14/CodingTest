@@ -39,7 +39,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
     private fun setData(model: UserModel) {
         binding.name.text = model.name
-        binding.bio.text = model.bio
+        binding.bio.text = "Bio : ${model.bio}"
         binding.username.text = "@${model.login}"
         binding.publicGistsCountTv.text = model.public_gists.toString()
         binding.publicRepoCountTv.text = model.public_repos.toString()

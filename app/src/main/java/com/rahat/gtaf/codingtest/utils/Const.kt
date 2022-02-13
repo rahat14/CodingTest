@@ -6,6 +6,6 @@ class Const {
         const val PER_PAGE: Int = 10
         const val REPO_NAME: String = "FLUTTER"
         const val REPO_OWNER: String = "FLUTTER"
-        const val PROFILE_USERNAME: String = "rahat14"
+        const val PROFILE_USERNAME: String = "mitchtabian"
     }
 }
