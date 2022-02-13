@@ -15,7 +15,8 @@
 for Android.
 
 ## Architecture
-- MVVM Architecture (View - ViewBinding - ViewModel - Model)
+- MVVM Architecture (Model - View - ViewModel)
 - Repository pattern
 
-
+# Project Demo 
+<img src="https://media.giphy.com/media/rfU3d5ZDsXAWvkWQSd/giphy.gif" width="222" height="480" />
